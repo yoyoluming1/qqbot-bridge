@@ -1,0 +1,10 @@
+{
+  "name": "qqbot-bridge",
+  "version": "0.1.0",
+  "description": "把 QQ（NapCat / OneBot 11）接到 DSH headless 会话上的桥接：一人设一号，带记忆、主动开口与安全护栏",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": { "start": "node src/index.js", "tick": "node src/index.js --tick" },
+  "engines": { "node": ">=20" },
+  "license": "MIT"
+}

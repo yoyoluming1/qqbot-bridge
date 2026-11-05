@@ -1,0 +1,18 @@
+[Unit]
+Description=QQ <-> DSH bridge
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/qq-bot
+ExecStart=/usr/bin/env node /opt/qq-bot/src/index.js
+Restart=always
+RestartSec=10
+Environment=HOME=/root
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+StandardOutput=append:/var/log/qqbot-bridge.log
+StandardError=append:/var/log/qqbot-bridge.log
+
+[Install]
+WantedBy=multi-user.target

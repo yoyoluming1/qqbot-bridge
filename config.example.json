@@ -1,0 +1,34 @@
+{
+  "napcat": {
+    "ws": "ws://127.0.0.1:3001",
+    "http": "http://127.0.0.1:3000",
+    "token": "CHANGE_ME"
+  },
+  "dsh": {
+    "profile": "bot",
+    "cwd": "/root/.dsh-bots/xiaoyu",
+    "timeoutMs": 180000,
+    "env": { "DSH_HOME": "/root/.dsh-bots/xiaoyu" }
+  },
+  "memory": {
+    "inboxPath": "/root/.dsh-bots/xiaoyu/whale-persona/memory-inbox.jsonl",
+    "moodStatePath": "/root/.dsh-bots/xiaoyu/fish-mood/state.json"
+  },
+  "proactive": {
+    "enabled": true,
+    "checkEveryMinutes": 10,
+    "minGapMinutes": 90,
+    "maxPerDay": 3,
+    "quietHours": [23, 8]
+  },
+  "policy": {
+    "allowUsers": [],
+    "allowGroups": [],
+    "groupRequireAt": true,
+    "autoJoinGroups": true,
+    "maxGroupRepliesPerDay": 200,
+    "maxPerPeerPerMinute": 6,
+    "minReplyChars": 1,
+    "maxReplyChars": 800
+  }
+}
