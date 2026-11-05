@@ -64,6 +64,17 @@ systemctl daemon-reload && systemctl enable --now qqbot-bridge
 journalctl -u qqbot-bridge -f
 ```
 
+## 部署脚本
+
+改完代码，一条命令上线（提交、推送、服务器拉取、重启、看日志）：
+
+```bash
+./deploy.sh "这次改了什么"
+```
+
+服务器地址默认 `root@120.53.2.49:80`、目录 `/opt/qq-bot`，可用环境变量 `QQBOT_HOST` / `QQBOT_PORT` / `QQBOT_DIR` 覆盖。
+服务器端只需配置一把只读 deploy key，`config.json` 与 `data/` 已在 `.gitignore` 中，不会被覆盖。
+
 ## 设计取舍
 
 - **每条消息起一个 dsh 进程**（约 3–6 秒）：换来零常驻状态、崩了不影响下一轮。量大再改常驻。
