@@ -20,7 +20,7 @@ else
 fi
 
 echo "[deploy] 传代码"
-tar czf - --exclude ./.git --exclude ./node_modules --exclude ./data --exclude ./config.json . \
+COPYFILE_DISABLE=1 tar czf - --exclude ./.git --exclude ./node_modules --exclude ./data --exclude ./config.json . \
   | ssh -p "$PORT" "$HOST" "mkdir -p $DIR && tar xzf - -C $DIR"
 
 echo "[deploy] 重启桥接"
